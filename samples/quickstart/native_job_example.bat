@@ -1,0 +1,1 @@
+echo %date% %time% >> run_times.txt

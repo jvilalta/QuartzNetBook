@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains job definitions in schema version 2.0 format -->
+
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+
+  <schedule>
+
+    <job>
+      <name>nativeJobExample</name>
+      <group>nativeJobExampleGroup</group>
+      <description>Sample job for Quartz Server</description>
+      <job-type>Quartz.Job.NativeJob, Quartz</job-type>
+      <job-data-map>
+        <entry>
+          <key>command</key>
+          <value>native_job_example.bat</value>
+        </entry>
+        <entry>
+          <key>consumeStreams</key>
+          <value>true</value>
+        </entry>
+      </job-data-map>
+    </job>
+
+    <trigger>
+      <simple>
+        <name>nativeJobExampleSimpleTrigger</name>
+        <group>nativeJobExampleSimpleTriggerGroup</group>
+        <description>Simple trigger to simply fire sample job</description>
+        <job-name>nativeJobExample</job-name>
+        <job-group>nativeJobExampleGroup</job-group>
+        <misfire-instruction>SmartPolicy</misfire-instruction>
+        <repeat-count>5</repeat-count>
+        <repeat-interval>10000</repeat-interval>
+      </simple>
+    </trigger>
+
+    <job>
+      <name>quickStartJobExample</name>
+      <group>quickStartJobExampleGroup</group>
+      <description>My first Quartz.Net job</description>
+      <job-type>QuickStart.QuickStartJob, QuickStart</job-type>
+    </job>
+    <trigger>
+      <simple>
+        <name>quickStartJobExampleSimpleTrigger</name>
+        <group>quickStartJobExampleSimpleTriggerGroup</group>
+        <description>Trigger that fires the QuickStartJob</description>
+        <job-name>quickStartJobExample</job-name>
+        <job-group>quickStartJobExampleGroup</job-group>
+        <misfire-instruction>SmartPolicy</misfire-instruction>
+        <repeat-count>5</repeat-count>
+        <repeat-interval>10000</repeat-interval>
+      </simple>
+    </trigger>
+
+  </schedule>
+</job-scheduling-data>
