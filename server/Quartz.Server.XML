@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Quartz.Server</name>
+    </assembly>
+    <members>
+        <member name="T:Quartz.Server.Program">
+            <summary>
+            The server's main entry point.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.Program.Main(System.String[])">
+            <summary>
+            Main.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="T:Quartz.Server.QuartzServer">
+            <summary>
+            The main server logic.
+            </summary>
+        </member>
+        <member name="T:Quartz.Server.IQuartzServer">
+            <summary>
+            Service interface for core Quartz.NET server.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.IQuartzServer.Initialize">
+            <summary>
+            Initializes the instance of <see cref="T:Quartz.Server.IQuartzServer"/>.
+            Initialization will only be called once in server's lifetime.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.IQuartzServer.Start">
+            <summary>
+            Starts this instance.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.IQuartzServer.Stop">
+            <summary>
+            Stops this instance.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.QuartzServer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Quartz.Server.QuartzServer"/> class.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.QuartzServer.Initialize">
+            <summary>
+            Initializes the instance of the <see cref="T:Quartz.Server.QuartzServer"/> class.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.QuartzServer.GetScheduler">
+            <summary>
+            Gets the scheduler with which this server should operate with.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Quartz.Server.QuartzServer.CreateSchedulerFactory">
+            <summary>
+            Creates the scheduler factory that will be the factory
+            for all schedulers on this instance.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Quartz.Server.QuartzServer.Start">
+            <summary>
+            Starts this instance, delegates to scheduler.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.QuartzServer.Stop">
+            <summary>
+            Stops this instance, delegates to scheduler.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.QuartzServer.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.QuartzServer.Pause">
+            <summary>
+            Pauses all activity in scheudler.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.QuartzServer.Resume">
+            <summary>
+            Resumes all acitivity in server.
+            </summary>
+        </member>
+        <member name="P:Quartz.Server.QuartzServer.Scheduler">
+            <summary>
+            Returns the current scheduler instance (usually created in <see cref="M:Quartz.Server.QuartzServer.Initialize"/>
+            using the <see cref="M:Quartz.Server.QuartzServer.GetScheduler"/> method).
+            </summary>
+        </member>
+        <member name="T:Quartz.Server.Configuration">
+            <summary>
+            Configuration for the Quartz server.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.Configuration.#cctor">
+            <summary>
+            Initializes the <see cref="T:Quartz.Server.Configuration"/> class.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.Configuration.GetConfigurationOrDefault(System.String,System.String)">
+            <summary>
+            Returns configuration value with given key. If configuration
+            for the does not exists, return the default value.
+            </summary>
+            <param name="configurationKey">Key to read configuration with.</param>
+            <param name="defaultValue">Default value to return if configuration is not found</param>
+            <returns>The configuration value.</returns>
+        </member>
+        <member name="P:Quartz.Server.Configuration.ServiceName">
+            <summary>
+            Gets the name of the service.
+            </summary>
+            <value>The name of the service.</value>
+        </member>
+        <member name="P:Quartz.Server.Configuration.ServiceDisplayName">
+            <summary>
+            Gets the display name of the service.
+            </summary>
+            <value>The display name of the service.</value>
+        </member>
+        <member name="P:Quartz.Server.Configuration.ServiceDescription">
+            <summary>
+            Gets the service description.
+            </summary>
+            <value>The service description.</value>
+        </member>
+        <member name="P:Quartz.Server.Configuration.ServerImplementationType">
+            <summary>
+            Gets the type name of the server implementation.
+            </summary>
+            <value>The type of the server implementation.</value>
+        </member>
+        <member name="T:Quartz.Server.QuartzServerFactory">
+            <summary>
+            Factory class to create Quartz server implementations from.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.QuartzServerFactory.CreateServer">
+            <summary>
+            Creates a new instance of an Quartz.NET server core.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Quartz.Server.SampleJob">
+            <summary>
+            A sample job that just prints info on console for demostration purposes.
+            </summary>
+        </member>
+        <member name="M:Quartz.Server.SampleJob.Execute(Quartz.IJobExecutionContext)">
+            <summary>
+            Called by the <see cref="T:Quartz.IScheduler"/> when a <see cref="T:Quartz.ITrigger"/>
+            fires that is associated with the <see cref="T:Quartz.IJob"/>.
+            </summary>
+            <remarks>
+            The implementation may wish to set a  result object on the 
+            JobExecutionContext before this method exits.  The result itself
+            is meaningless to Quartz, but may be informative to 
+            <see cref="T:Quartz.IJobListener"/>s or 
+            <see cref="T:Quartz.ITriggerListener"/>s that are watching the job's 
+            execution.
+            </remarks>
+            <param name="context">The execution context.</param>
+        </member>
+    </members>
+</doc>
