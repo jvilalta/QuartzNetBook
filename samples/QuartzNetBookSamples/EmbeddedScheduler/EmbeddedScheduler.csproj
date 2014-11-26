@@ -60,7 +60,20 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-    <None Include="quartz.config" />
+    <None Include="quartz.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Examples\Examples.csproj">
+      <Project>{f02a484f-5145-498e-84ea-2a4f5d4bae6d}</Project>
+      <Name>Examples</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="quartz_jobs.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

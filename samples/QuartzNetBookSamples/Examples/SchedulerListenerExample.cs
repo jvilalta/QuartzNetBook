@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace Examples
@@ -11,102 +12,102 @@ namespace Examples
 
         public void JobAdded(IJobDetail jobDetail)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void JobDeleted(JobKey jobKey)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void JobPaused(JobKey jobKey)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void JobResumed(JobKey jobKey)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void JobScheduled(ITrigger trigger)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void JobUnscheduled(TriggerKey triggerKey)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void JobsPaused(string jobGroup)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void JobsResumed(string jobGroup)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void SchedulerError(string msg, SchedulerException cause)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void SchedulerInStandbyMode()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void SchedulerShutdown()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void SchedulerShuttingdown()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void SchedulerStarted()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void SchedulerStarting()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void SchedulingDataCleared()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void TriggerFinalized(ITrigger trigger)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void TriggerPaused(TriggerKey triggerKey)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void TriggerResumed(TriggerKey triggerKey)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void TriggersPaused(string triggerGroup)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void TriggersResumed(string triggerGroup)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
     }
 }
