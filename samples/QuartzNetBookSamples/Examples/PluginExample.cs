@@ -13,6 +13,7 @@ namespace Examples
         public void Initialize(string pluginName, IScheduler sched)
         {
             sched.ListenerManager.AddJobListener(new JobListenerExample(), EverythingMatcher<JobKey>.AllJobs());
+            sched.ListenerManager.AddSchedulerListener(new SchedulerListenerExample());
         }
 
         public void Shutdown()
