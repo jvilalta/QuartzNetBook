@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Quartz;
 using Common.Logging;
+using System.Reflection;
 
 namespace Examples
 {
@@ -11,23 +12,22 @@ namespace Examples
     {
         public void JobExecutionVetoed(IJobExecutionContext context)
         {
-            logger.Info("JobExecutionVetoed");
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void JobToBeExecuted(IJobExecutionContext context)
         {
-            logger.Info("JobToBeExecuted");
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public void JobWasExecuted(IJobExecutionContext context, JobExecutionException jobException)
         {
-            logger.Info("JobWasExecuted");
+            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
         }
 
         public string Name
         {
             get { return "JobListenerExample"; }
         }
-        private static readonly ILog logger = LogManager.GetLogger(typeof(JobListenerExample));
     }
 }

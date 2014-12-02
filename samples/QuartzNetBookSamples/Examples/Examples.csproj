@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DirectoryScanListenerExample.cs" />
+    <Compile Include="JobDurationListenerExample.cs" />
     <Compile Include="JobListenerExample.cs" />
     <Compile Include="PluginExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
