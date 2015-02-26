@@ -14,6 +14,7 @@ namespace Examples
         {
             sched.ListenerManager.AddJobListener(new JobListenerExample(), EverythingMatcher<JobKey>.AllJobs());
             sched.ListenerManager.AddJobListener(new JobDurationListenerExample(), EverythingMatcher<JobKey>.AllJobs());
+            sched.ListenerManager.AddTriggerListener(new TriggerListenerExample(), EverythingMatcher<JobKey>.AllTriggers());
             sched.ListenerManager.AddSchedulerListener(new SchedulerListenerExample());
         }
 
