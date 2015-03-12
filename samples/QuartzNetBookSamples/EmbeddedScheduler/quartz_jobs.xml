@@ -35,7 +35,7 @@
         <job-name>directoryScanJobExample</job-name>
         <job-group>directoryScanJobExample</job-group>
         <misfire-instruction>SmartPolicy</misfire-instruction>
-        <repeat-count>-1</repeat-count>
+        <repeat-count>2</repeat-count>
         <repeat-interval>10000</repeat-interval>
       </simple>
     </trigger>

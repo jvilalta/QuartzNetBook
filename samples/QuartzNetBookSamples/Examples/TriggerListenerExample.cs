@@ -29,7 +29,7 @@ namespace Examples
         public bool VetoJobExecution(ITrigger trigger, IJobExecutionContext context)
         {
             Console.WriteLine("The scheduler called {0} for trigger {1}", MethodBase.GetCurrentMethod().Name,trigger.Key);
-            return false;
+            return true;
         }
     }
 }

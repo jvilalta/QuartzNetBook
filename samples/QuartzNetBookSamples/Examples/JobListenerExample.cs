@@ -12,17 +12,17 @@ namespace Examples
     {
         public void JobExecutionVetoed(IJobExecutionContext context)
         {
-            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
+            Console.WriteLine("The scheduler called {0} for job {1}", MethodBase.GetCurrentMethod().Name,context.JobDetail.Key);
         }
 
         public void JobToBeExecuted(IJobExecutionContext context)
         {
-            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
+            Console.WriteLine("The scheduler called {0} for job {1}", MethodBase.GetCurrentMethod().Name, context.JobDetail.Key);
         }
 
         public void JobWasExecuted(IJobExecutionContext context, JobExecutionException jobException)
         {
-            Console.WriteLine("The scheduler called {0}", MethodBase.GetCurrentMethod().Name);
+            Console.WriteLine("The scheduler called {0} for job {1}", MethodBase.GetCurrentMethod().Name, context.JobDetail.Key);
         }
 
         public string Name
