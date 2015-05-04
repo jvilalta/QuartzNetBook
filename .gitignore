@@ -66,7 +66,7 @@ local.properties
 **/*.dotCover
 
 # Nuget Packages
-**/packages/ 
+**/packages/*
 
 # Visual C++ cache files
 ipch/
